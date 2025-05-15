@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DES File Encryption</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+  <style>
+    body {
+      background-color: #f4f6f8;
+      padding-top: 30px;
+    }
+    .card {
+      margin-bottom: 30px;
+    }
+    .btn-custom {
+      background-color: #007bff;
+      color: #00000000;
+    }
+    .btn-custom:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h2 class="text-center mb-4">Mã hóa & Giải mã File bằng DES</h2>
+
+  <!-- Encrypt Card -->
+  <div class="card">
+    <div class="card-header bg-primary text-white">Mã hóa File</div>
+    <div class="card-body">
+      <form method="POST" action="/encrypt" enctype="multipart/form-data">
+        <div class="form-group">
+          <label>Chọn file:</label>
+          <input type="file" name="file" class="form-control" required />
+        </div>
+        <div class="form-group">
+          <label>Mật khẩu (8 ký tự):</label>
+          <input type="password" name="password" class="form-control" required />
+        </div>
+        <button class="btn btn-custom btn-block">Mã hóa và Tải xuống</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Decrypt Card -->
+  <div class="card">
+    <div class="card-header bg-success text-white">Giải mã File</div>
+    <div class="card-body">
+      <form method="POST" action="/decrypt" enctype="multipart/form-data">
+        <div class="form-group">
+          <label>Chọn file đã mã hóa:</label>
+          <input type="file" name="file" class="form-control" required />
+        </div>
+        <div class="form-group">
+          <label>Mật khẩu đã dùng để mã hóa:</label>
+          <input type="password" name="password" class="form-control" required />
+        </div>
+        <button class="btn btn-custom btn-block bg-success">Giải mã và Tải xuống</button>
+      </form>
+    </div>
+  </div>
+</div>
+</body>
+</html>
