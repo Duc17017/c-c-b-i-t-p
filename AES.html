@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>AES  Encrypt/Decrypt</title>
+    <style>
+        body { font-family: sans-serif; padding: 40px; max-width: 600px; margin: auto; background: #f5f5f5; }
+        input, select, button { padding: 10px; margin: 10px 0; width: 100%; }
+        h2 { color: #333; }
+    </style>
+</head>
+<body>
+    <h2>🔐 AES File Encrypt/Decrypt</h2>
+    <form method="POST" action="/process" enctype="multipart/form-data">
+        <label>🔑 Nhập khóa AES (tự do):</label>
+        <input type="text" name="key" required>
+
+        <label>📂 Chọn file cần xử lý:</label>
+        <input type="file" name="file" required>
+
+        <label>⚙️ Chế độ:</label>
+        <select name="mode" required>
+            <option value="encrypt">Mã hóa</option>
+            <option value="decrypt">Giải mã</option>
+        </select>
+
+        <button type="submit">🚀 Thực hiện</button>
+    </form>
+</body>
+</html>
