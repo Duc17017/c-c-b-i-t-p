@@ -1,0 +1,35 @@
+- Mục tiêu:
+Tạo một ứng dụng web cho phép người dùng mã hóa và giải mã file (PDF, DOCX, TXT, ZIP, v.v...) bằng thuật toán AES.
+
+Hỗ trợ người dùng nhập khóa tùy ý.
+
+Cho phép upload file đầu vào, download file kết quả.
+
+Giao diện thân thiện, đẹp, dễ sử dụng.
+- Luồng hoạt động chính:
+[Người dùng] 
+     |
+     | --- Nhập khóa tùy chọn
+     | --- Upload file (dữ liệu gốc hoặc dữ liệu đã mã hóa)
+     ↓
+[Giao diện web] 
+     |
+     | --- Chọn chức năng: Mã hóa hoặc Giải mã
+     ↓
+[Backend xử lý AES]
+     |
+     | --- Mã hóa (AES Encrypt) hoặc Giải mã (AES Decrypt)
+     ↓
+[Tạo file kết quả]
+     ↓
+[Người dùng tải file về]
+- Quy trình mã hóa AES:
+Đọc file upload → chuyển sang dạng byte.
+
+Nhập khóa từ người dùng → xử lý độ dài phù hợp (128/192/256 bit).
+
+Tạo vector khởi tạo (IV) nếu dùng AES CBC mode.
+
+Mã hóa dữ liệu bằng AES (nên dùng thư viện pycryptodome, crypto-js, v.v...).
+
+Trả về file mã hóa cho người dùng tải xuống.
